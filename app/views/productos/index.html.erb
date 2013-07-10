@@ -1,72 +1,57 @@
- <!-- Featured Product-->
-    <section id="featured" class="row mt40">
-        <div class="container">
-            <h1 class="heading1"><span class="maintext"> <i class="icon-star"></i> Productos Destacados</span></h1>
-            <div class="featuredcarousalwrap">
-                <ul class="thumbnails" id="featuredcarousal">
-                  <!-- Inicio Producto Destacado -->
-                    <li class="span3"> <a class="prdocutname" href="product.html">My First Product</a>
-                        <div class="thumbnail"> <span class="sale tooltip-test"> <i class="icon-gift font24"></i> <br>
-                            Sale</span> <a href="#"><img alt="" src="/assets/product1a.jpg"></a>
-                            <div class="shortlinks">
-                                <button  data-original-title="Cart" class="btn btn-orange tooltip-test"> <i class="icon-shopping-cart icon-white"></i> </button>
-                                <button  data-original-title="Wishlist" class="btn btn-orange btn-small tooltip-test"> <i class="icon-heart icon-white"></i> </button>
-                                <button  data-original-title="Compare" class="btn btn-orange btn-small tooltip-test"> <i class="icon-refresh icon-white"></i> </button>
-                            </div>
-                            <div class="price">
-                                <div class="pricenew">$4459.00</div>
-                                <div class="priceold">$5000.00</div>
-                                <div class="ratingstar"> <i class="icon-star orange"> </i><i class="icon-star orange"> </i><i class="icon-star"> </i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i></div>
-                            </div>
-                            <a  class="btn btn-orange btn-small  addtocartbutton">Add to Cart</a> </div>
-                    </li>
-                    <!-- Fin Producto Destacado-->
-                </ul>
-                <div class="clearfix"></div>
-                <a id="prevfeatured" class="prev" href="#"><i class="icon-chevron-left"></i></a> <a id="nextfeatured" class="next" href="#"><i class="icon-chevron-right"></i></a> </div>
+<% provide(:title,'Productos')%>  
+ <div class="container-fluid">
+      <div class="row">
+        <div class="span2">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header"> <h4>Productos</h4></li>
+              <li><a href="#">alfombras</a></li>
+              <li><a href="#">pisos</a></li>
+              <li><a href="#">cielos</a></li>
+              <li><a href="#">Ceramicas</a></li>
+              <li><a href="#">Cortinas y toldos</a></li>
+              <li><a href="#">papeles murales</a></li>
+              <li><a href="#">productos tecnicos</a></li>
+              <li><a href="#"></a></li>
+              
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span10"> 
+          <div class="container">                  
+            <h1 class="heading1"><span class="maintext">Alfombras</span></h1>
+             <div class="row">
+              <ul>
+                  <% if @productos != nil %>                
+                  <% @productos.each do |producto| %>
+                  <li class="span3-fluid well"> 
+                  <div class="thumbnail"> <a href="/productos/<%=producto.id%>">
+                    <%if producto.imagen_file_name%>
+                      <img alt="" src="<%=producto.imagen.url(:medium)%>"></a>
+                    <%else%>
+                      <img alt="" src="/assets/300x222.gif"></a>
+                    <%end%>
+                    <h5><b>Nombre del Producto</b></h5>
+                      <a class="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                      <div class="price">
+                      <div class="pricenew">Precio: $<%= producto.precio%></div>                              
+                      </div>
+                      </div>  
+                  </li>
+                  <% end %>
+                  <% end %>
+              </ul>
+            </div>
+            <h1 class="heading1"><span class="maintext">Pisos</span></h1>
+             
+            <h1 class="heading1"><span class="maintext">Cielos</span></h1>
+            <h1 class="heading1"><span class="maintext">Ceramicas</span></h1>
+            <h1 class="heading1"><span class="maintext">Cortinas y Toldos</span></h1>
+            <h1 class="heading1"><span class="maintext">Papeles Murales</span></h1>
+            <h1 class="heading1"><span class="maintext">Productos Tecnicos</span></h1>
+          </div>
         </div>
-    </section>
-    
-    <!-- Latest Product-->
-    <section id="latest" class="row mt40">
-        <div class="container">
-            <h1 class="heading1"><span class="maintext"> <i class="icon-thumbs-up"></i> Productos Recientes</span></h1>
-            <div class="latestcarousalwrap">
-                <ul class="thumbnails" id="latestcarousal">
-                <!-- Inicio producto reciente -->
-                    <li class="span3"> <a class="prdocutname" href="product.html">My First Product</a>
-                        <div class="thumbnail"> <a href="#"><img alt="" src="/assets/product1a.jpg"></a>
-                            <div class="shortlinks">
-                                <button  data-original-title="Cart" class="btn btn-orange tooltip-test"> <i class="icon-shopping-cart icon-white"></i> </button>
-                                <button  data-original-title="Wishlist" class="btn btn-orange btn-small tooltip-test"> <i class="icon-heart icon-white"></i> </button>
-                                <button  data-original-title="Compare" class="btn btn-orange btn-small tooltip-test"> <i class="icon-refresh icon-white"></i> </button>
-                            </div>
-                            <div class="price">
-                                <div class="pricenew">$4459.00</div>
-                                <div class="priceold">$5000.00</div>
-                                <div class="ratingstar"> <i class="icon-star orange"> </i><i class="icon-star orange"> </i><i class="icon-star"> </i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i></div>
-                            </div>
-                            <a  class="btn btn-orange btn-small  addtocartbutton">Add to Cart</a> </div>
-                    </li>
-                    <!-- Fin producto reciente -->
+    </div>
 
-                    <li class="span3"> <a class="prdocutname" href="product.html">My First Product</a>
-                        <div class="thumbnail"><span class="new tooltip-test"><i class="icon-lightbulb font24"></i> <br>
-                            New</span> <a href="#"><img alt="" src="/assets/product2a.jpg"></a>
-                            <div class="shortlinks">
-                                <button  data-original-title="Cart" class="btn btn-orange tooltip-test"> <i class="icon-shopping-cart icon-white"></i> </button>
-                                <button  data-original-title="Wishlist" class="btn btn-orange btn-small tooltip-test"> <i class="icon-heart icon-white"></i> </button>
-                                <button  data-original-title="Compare" class="btn btn-orange btn-small tooltip-test"> <i class="icon-refresh icon-white"></i> </button>
-                            </div>
-                            <div class="price">
-                                <div class="pricenew">$4459.00</div>
-                                <div class="priceold">$5000.00</div>
-                                <div class="ratingstar"> <i class="icon-star orange"> </i><i class="icon-star orange"> </i><i class="icon-star"> </i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i></div>
-                            </div>
-                            <a  class="btn btn-orange btn-small  addtocartbutton">Add to Cart</a> </div>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-                <a id="prevlatest" class="prev" href="#"><i class="icon-chevron-left"></i></a> <a id="nextlatest" class="next" href="#"><i class="icon-chevron-right"></i></a> </div>
-        </div>
-    </section>
+ 
+  

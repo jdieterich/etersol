@@ -1,20 +1,43 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Precio:</b>
-  <%= @producto.precio %>
-</p>
+<section id="product">
+        <div class="container"> 
+            <!-- Product Details-->
+            <div class="row"> 
+                <!-- Left Image-->
+                <div class="span5">
+                    <ul class="thumbnails mainimage">
+                       <li class="span5"> 
+                        <%if @producto.imagen_file_name%>
+                            <a  rel="position: 'inside' , showTitle: false, adjustX:-4, adjustY:-4" class="thumbnail cloud-zoom" href="<%=@producto.imagen.url%>"><img src="<%=@producto.imagen.url%>" alt="" title=""></a> 
+                        <%else%>
+                             <a  rel="position: 'inside' , showTitle: false, adjustX:-4, adjustY:-4" class="thumbnail cloud-zoom" href="/assets/590x885.gif"><img src="/assets/590x885.gif" alt="" title=""></a> 
+                        <%end%>
+                       </li>
+                   </ul>
+                    <span>mueve el raton sobre la imagen para acercar</span>                   
+                </div>
+                <!-- Right Details-->
+                <div class="span7">
+                    <div class="row">
+                        <div class="span7 well">
+                            <h1 class="productname"><span class="bgnone">Nombre del Producto</span></h1>
+                            <h3><%= @producto.nombre %></h3>
+                            <div class="productprice">
+                                 <h1 class="productname"><span class="bgnone">Precio del Producto</span></h1>
+                                <h3>$<%= @producto.precio %></h3>
+                            </div>
+                            <h1 class="productname"><span class="bgnone">Descripción del Producto</span></h1>
+                            
+                            <h4><%= @producto.descripcion %></h4>                             
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  <%if user_signed_in?%>
+  <p id="notice"><%= notice %></p>
+<%= link_to 'Modificar', edit_producto_path(@producto) %> | <%= link_to 'Volver', productos_path %>
 
-<p>
-  <b>Nombre:</b>
-  <%= @producto.nombre %>
-</p>
 
-<p>
-  <b>Descripcion:</b>
-  <%= @producto.descripcion %>
-</p>
-
-
-<%= link_to 'Edit', edit_producto_path(@producto) %> |
-<%= link_to 'Back', productos_path %>
+  <%end%>

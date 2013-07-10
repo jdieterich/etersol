@@ -1,63 +1,73 @@
-<!-- Section Start-->
-    <section class="container otherddetails">
-        <div class="otherddetailspart">
-            <div class="innerclass"> <i class="icon-truck font60"></i>
-                <h2>Free shipping</h2>
-                <p>All over in world over $200</p>
-            </div>
-        </div>
-        <div class="otherddetailspart">
-            <div class="innerclass"> <i class="icon-thumbs-up font60"></i>
-                <h2>100% Guarantee </h2>
-                <p>Anytime Replacement </p>
-            </div>
-        </div>
-        <div class="otherddetailspart">
-            <div class="innerclass"> <i class="icon-money font60"></i>
-                <h2>Easy Payment</h2>
-                <p> Payment Gatway support</p>
-            </div>
-        </div>
-        <div class="otherddetailspart">
-            <div class="innerclass"> <i class="icon-time font60"></i>
-                <h2>24hrs Shipping</h2>
-                <p> Free For <br>
-                    UK Customers </p>
-            </div>
-        </div>
-        <div class="otherddetailspart">
-            <div class="innerclass"> <i class="icon-gift font60"></i>
-                <h2>Over 5000 Choice</h2>
-                <p>50,000+ Products</p>
-            </div>
-        </div>
-        <div class="otherddetailspart">
-            <div class="innerclass"> <i class="icon-tags font60"></i>
-                <h2>Low Price</h2>
-                <p>Available in Low Price</p>
-            </div>
-        </div>
-    </section>
-    <!-- Section End--> 
-
+<% provide(:title,'Inicio')%>  
 <!-- Popular Brands-->
     <section id="popularbrands" class="container mt40">
-        <h1 class="heading1"><span class="maintext"> <i class="icon-trophy"></i> Proveedores </span></h1>
+         <div class="row">
+            <div class="span1">
+            </div>
+            <div class="span6">
+                <h1>Etersol Curicó</h1>
+                <h5>Por más de 25 años es líder en la 7ª región. Entregando soluciones para revestimiento de pisos, muros, cielos y protección de suelos. Además contamos con una gran variedad de cortinas interiores, exteriores y toldos, como así mismo un servicio de remodelaciones, construcciones en general incluido proyectos mobiliarios.</h5>
+            </div>
+            <div class="span4">
+                <img src="/assets/etersol.jpg"  class="img-rounded">
+            </div>
+         </div>
+
+        <h1 class="heading1"><span class="maintext"> </i> Productos </span></h1>
+         <div class="row">
+        <div class="span4 textcenter">
+          <h1>Alfombras</h1>
+          <img src="/assets/inicio.png" class="img-circle">
+          <h5>Abastece a gran parte de las empresas constructoras nacionales y a los principales distribuidores de materiales de construcción y decoración.</h5>
+        </div>
+        <div class="span4 textcenter">
+          <h1>Pisos</h1>
+          <img src="/assets/inicio2.png" class="img-circle">
+          <h5>Es una empresa líder en el mercado  de los revestimientos de pisos, muros  y protección de suelos.</h5>          
+       </div>
+        <div class="span4 textcenter">
+          <h1>Cielos</h1>
+          <img src="/assets/inicio3.png" class="img-circle">
+          <h5>Abastece a gran parte de las empresas constructoras nacionales y a los principales distribuidores de materiales de construcción y decoración</h5>          
+        </div>
+      </div>
+
+        <h1 class="heading1"><span class="maintext">Proveedores </span></h1>
         <div class="brandcarousalrelative">
             <ul id="brandcarousal">
-                <li><img src="/assets/brand1.jpg" alt="" title=""/></li>
-                <li><img src="/assets/brand2.jpg" alt="" title=""/></li>
-                <li><img src="/assets/brand3.jpg" alt="" title=""/></li>
-                <li><img src="/assets/brand4.jpg" alt="" title=""/></li>
-                <li><img src="/assets/brand1.jpg" alt="" title=""/></li>
-                <li><img src="/assets/brand2.jpg" alt="" title=""/></li>
-                <li><img src="/assets/brand3.jpg" alt="" title=""/></li>
-                <li><img src="/assets/brand4.jpg" alt="" title=""/></li>
-                <li><img src="/assets/brand1.jpg" alt="" title=""/></li>
-                <li><img src="/assets/brand2.jpg" alt="" title=""/></li>
-                <li><img src="/assets/brand3.jpg" alt="" title=""/></li>
-                <li><img src="/assets/brand4.jpg" alt="" title=""/></li>
+                <li><img src="/assets/logo_flexalum.png" alt="" title=""/></li>
+                <li><img src="/assets/logo-wiener.png" alt="" title=""/></li>
+                <li><img src="/assets/logo-foot.png" alt="" title=""/></li>
+                 <li><img src="/assets/hunter.png" alt="" title=""/></li>
+                <li><img src="/assets/luxa.png" alt="" title=""/></li>
+                <li><img src="/assets/rolux.png" alt="" title=""/></li>
+                <li><img src="/assets/colowall.png" alt="" title=""/></li>
+             
             </ul>
             <div class="clearfix"></div>
             <a id="prev" class="prev" href="#"><i class="icon-chevron-left"></i></a> <a id="next" class="next" href="#"><i class="icon-chevron-right"></i></a> </div>
     </section>
+
+
+
+
+
+
+<% if @microcuentos != nil %>
+  <h2>Microcuentos recientes</h2>
+  <% @microcuentos.each do |microcuento| %>
+
+  <li>
+    <figure>
+    <img src="/assets/150x200.gif" alt="">
+    <figcaption>
+    <h5><%=microcuento.title%></h5>
+    <span>Autor: <%= microcuento.user.name %></span>
+    <a href="/microcuentos/<%=microcuento.id%>">Leer</a>
+    </figcaption>
+    </figure>
+  </li>
+
+  <% end %>
+
+<% end %>

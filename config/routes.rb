@@ -1,10 +1,10 @@
 Etersol::Application.routes.draw do
   devise_for :users
-
   get "etersol/inicio"
-
+  get "etersol/ubicacion"
+  get "etersol/cotizar"
   resources :productos
-
+  get "marcas_afiliados/index"
 
   resources :users
 
