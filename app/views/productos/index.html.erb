@@ -18,18 +18,18 @@
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span10"> 
-          <div class="container">                  
+          <div class="container-fluid">                  
             <h1 class="heading1"><span class="maintext">Alfombras</span></h1>
              <div class="row">
               <ul>
                   <% if @productos != nil %>                
                   <% @productos.each do |producto| %>
-                  <li class="span3-fluid well"> 
-                  <div class="thumbnail"> <a href="/productos/<%=producto.id%>">
+                  <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                  <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
                     <%if producto.imagen_file_name%>
-                      <img alt="" src="<%=producto.imagen.url(:medium)%>"></a>
+                      <img alt="" src="<%=producto.imagen.url(:medium)%>" class="img-rounded"></a>
                     <%else%>
-                      <img alt="" src="/assets/300x222.gif"></a>
+                      <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
                     <%end%>
                     <h5><b>Nombre del Producto</b></h5>
                       <a class="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
@@ -37,7 +37,7 @@
                       <div class="pricenew">Precio: $<%= producto.precio%></div>                              
                       </div>
                       </div>  
-                  </li>
+                  </div>
                   <% end %>
                   <% end %>
               </ul>

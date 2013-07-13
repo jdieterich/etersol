@@ -5,4 +5,8 @@ class EtersolController < ApplicationController
   end
   def cotizar  	
   end
+
+  def enviar_email
+  	contenido = paramas[:email_cotizar]
+  end
 end

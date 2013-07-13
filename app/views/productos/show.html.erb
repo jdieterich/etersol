@@ -1,16 +1,15 @@
 
 <section id="product">
         <div class="container"> 
-            <!-- Product Details-->
             <div class="row"> 
                 <!-- Left Image-->
                 <div class="span5">
                     <ul class="thumbnails mainimage">
                        <li class="span5"> 
                         <%if @producto.imagen_file_name%>
-                            <a  rel="position: 'inside' , showTitle: false, adjustX:-4, adjustY:-4" class="thumbnail cloud-zoom" href="<%=@producto.imagen.url%>"><img src="<%=@producto.imagen.url%>" alt="" title=""></a> 
+                         <img src="<%=@producto.imagen.url%>" alt="" title=""class="img-rounded">
                         <%else%>
-                             <a  rel="position: 'inside' , showTitle: false, adjustX:-4, adjustY:-4" class="thumbnail cloud-zoom" href="/assets/590x885.gif"><img src="/assets/590x885.gif" alt="" title=""></a> 
+                           <img src="/assets/590x885.gif" alt="" title="" class="img-rounded">
                         <%end%>
                        </li>
                    </ul>
@@ -27,7 +26,6 @@
                                 <h3>$<%= @producto.precio %></h3>
                             </div>
                             <h1 class="productname"><span class="bgnone">Descripción del Producto</span></h1>
-                            
                             <h4><%= @producto.descripcion %></h4>                             
                          </div>
                     </div>
