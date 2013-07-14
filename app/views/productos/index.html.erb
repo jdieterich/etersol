@@ -4,14 +4,13 @@
         <div class="span2">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header"> <h4>Productos</h4></li>
-              <li><a href="#">alfombras</a></li>
-              <li><a href="#">pisos</a></li>
-              <li><a href="#">cielos</a></li>
-              <li><a href="#">Ceramicas</a></li>
-              <li><a href="#">Cortinas y toldos</a></li>
-              <li><a href="#">papeles murales</a></li>
-              <li><a href="#">productos tecnicos</a></li>
+              <li class="nav-header"> <a href="/productos"><h4>Productos</h4></a></li>
+              <li><a href="/categoria/1">alfombras</a></li>
+              <li><a href="/categoria/2">pisos</a></li>
+              <li><a href="/categoria/3">cielos</a></li>
+              <li><a href="/categoria/4">Ceramicas</a></li>
+              <li><a href="/categoria/5">Cortinas y toldos</a></li>
+              <li><a href="/categoria/6">papeles murales</a></li>
               <li><a href="#"></a></li>
               
             </ul>
@@ -19,37 +18,181 @@
         </div><!--/span-->
         <div class="span10"> 
           <div class="container-fluid">                  
-            <h1 class="heading1"><span class="maintext">Alfombras</span></h1>
+            
              <div class="row">
+              <h1 class="heading1"><span class="maintext">Alfombras</span></h1>
               <ul>
                   <% if @productos != nil %>                
                   <% @productos.each do |producto| %>
-                  <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
-                  <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
+                    <% if producto.categoria_id == 1%>  
+                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
                     <%if producto.imagen_file_name%>
-                      <img alt="" src="<%=producto.imagen.url(:medium)%>" class="img-rounded"></a>
+                      <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
                     <%else%>
                       <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
                     <%end%>
-                    <h5><b>Nombre del Producto</b></h5>
-                      <a class="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
-                      <div class="price">
-                      <div class="pricenew">Precio: $<%= producto.precio%></div>                              
-                      </div>
-                      </div>  
-                  </div>
+                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div class="price">
+                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                    </div>
+                    </div>  
+                    </div>
+                  <% end %>
                   <% end %>
                   <% end %>
               </ul>
             </div>
-            <h1 class="heading1"><span class="maintext">Pisos</span></h1>
-             
-            <h1 class="heading1"><span class="maintext">Cielos</span></h1>
-            <h1 class="heading1"><span class="maintext">Ceramicas</span></h1>
-            <h1 class="heading1"><span class="maintext">Cortinas y Toldos</span></h1>
-            <h1 class="heading1"><span class="maintext">Papeles Murales</span></h1>
-            <h1 class="heading1"><span class="maintext">Productos Tecnicos</span></h1>
-          </div>
+            
+             <div class="row">
+              <h1 class="heading1"><span class="maintext">Pisos</span></h1>
+              <ul>
+                  <% if @productos != nil %>                
+                  <% @productos.each do |producto| %>
+                    <% if producto.categoria_id == 2%>  
+                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
+                    <%if producto.imagen_file_name%>
+                      <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
+                    <%else%>
+                      <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
+                    <%end%>
+                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div class="price">
+                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                    </div>
+                    </div>  
+                    </div>
+                  <% end %>
+                  <% end %>
+                  <% end %>
+              </ul>
+              </div>
+            
+              <div class="row">
+                  <h1 class="heading1"><span class="maintext">Cielos</span></h1>
+              <ul>
+                  <% if @productos != nil %>                
+                  <% @productos.each do |producto| %>
+                    <% if producto.categoria_id == 3%>  
+                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
+                    <%if producto.imagen_file_name%>
+                      <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
+                    <%else%>
+                      <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
+                    <%end%>
+                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div class="price">
+                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                    </div>
+                    </div>  
+                    </div>
+                  <% end %>
+                  <% end %>
+                  <% end %>
+              </ul>
+              </div>
+              <div class="row">
+                  <h1 class="heading1"><span class="maintext">Ceramicas</span></h1>
+              <ul>
+                  <% if @productos != nil %>                
+                  <% @productos.each do |producto| %>
+                    <% if producto.categoria_id == 4%>  
+                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
+                    <%if producto.imagen_file_name%>
+                      <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
+                    <%else%>
+                      <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
+                    <%end%>
+                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div class="price">
+                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                    </div>
+                    </div>  
+                    </div>
+                  <% end %>
+                  <% end %>
+                  <% end %>
+              </ul>
+              </div>
+      
+              <div class="row">
+                <h1 class="heading1"><span class="maintext">Cortinas y Toldos</span></h1>
+              <ul>
+                  <% if @productos != nil %>                
+                  <% @productos.each do |producto| %>
+                    <% if producto.categoria_id == 5%>  
+                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
+                    <%if producto.imagen_file_name%>
+                      <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
+                    <%else%>
+                      <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
+                    <%end%>
+                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div class="price">
+                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                    </div>
+                    </div>  
+                    </div>
+                  <% end %>
+                  <% end %>
+                  <% end %>
+              </ul>
+              </div>
+           
+              <div class="row">
+                 <h1 class="heading1"><span class="maintext">Papeles Murales</span></h1>
+              <ul>
+                  <% if @productos != nil %>                
+                  <% @productos.each do |producto| %>
+                    <% if producto.categoria_id == 6%>  
+                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
+                    <%if producto.imagen_file_name%>
+                      <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
+                    <%else%>
+                      <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
+                    <%end%>
+                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div class="price">
+                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                    </div>
+                    </div>  
+                    </div>
+                  <% end %>
+                  <% end %>
+                  <% end %>
+              </ul>
+            </div>
+           <!-- 
+            <div class="row">
+              <h1 class="heading1"><span class="maintext">Todos los Productos</span></h1>
+              <ul>
+                  <% if @productos != nil %>                
+                  <% @productos.each do |producto| %>
+                    
+                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
+                    <%if producto.imagen_file_name%>
+                      <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
+                    <%else%>
+                      <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
+                    <%end%>
+                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div class="price">
+                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                    </div>
+                    </div>  
+                    </div>
+                  
+                  <% end %>
+                  <% end %>
+              </ul>
+              </div> -->
+            </div>
         </div>
     </div>
 

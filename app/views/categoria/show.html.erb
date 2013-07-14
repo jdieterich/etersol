@@ -1,10 +1,64 @@
+
+<% provide(:title,'Categorias')%>  
+ <div class="container-fluid">
+      <div class="row">
+        <div class="span2">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header"><a href="/productos"><h4>Productos</h4></a></li>
+              <li><a href="/categoria/1">alfombras</a></li>
+              <li><a href="/categoria/2">pisos</a></li>
+              <li><a href="/categoria/3">cielos</a></li>
+              <li><a href="/categoria/4">Ceramicas</a></li>
+              <li><a href="/categoria/5">Cortinas y toldos</a></li>
+              <li><a href="/categoria/6">papeles murales</a></li>
+              <li><a href="#"></a></li>
+              
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span10"> 
+          <div class="container-fluid">                  
+            
+             <div class="row">
+              <h1 class="heading1"><span class="maintext"><%= @categorium.nombre %></span></h1>
+              <ul>
+                  <% if @productos != nil %>                
+                  <% @productos.each do |producto| %>
+                    <% if producto.categoria_id ==   @categorium.id  %>  
+                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
+                    <%if producto.imagen_file_name%>
+                      <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
+                    <%else%>
+                      <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
+                    <%end%>
+                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div class="price">
+                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                    </div>
+                    </div>  
+                    </div>
+                  <% end %>
+                  <% end %>
+                  <% end %>
+              </ul>
+            </div>       
+          </div>
+        </div>
+    </div>
+
+<!-- 
+  
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>Nombre:</b>
   <%= @categorium.nombre %>
+
 </p>
 
 
 <%= link_to 'Edit', edit_categorium_path(@categorium) %> |
 <%= link_to 'Back', categoria_path %>
+-->

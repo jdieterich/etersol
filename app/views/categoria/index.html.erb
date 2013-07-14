@@ -1,4 +1,4 @@
-<h1>Listing categoria</h1>
+<h1>Categorias</h1>
 
 <table>
   <tr>
@@ -11,13 +11,13 @@
 <% @categoria.each do |categorium| %>
   <tr>
     <td><%= categorium.nombre %></td>
-    <td><%= link_to 'Show', categorium %></td>
-    <td><%= link_to 'Edit', edit_categorium_path(categorium) %></td>
-    <td><%= link_to 'Destroy', categorium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Mostrar', categorium %></td>
+    <td><%= link_to 'Editar', edit_categorium_path(categorium) %></td>
+    <td><%= link_to 'Eliminar', categorium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Categorium', new_categorium_path %>
+<%= link_to 'crear una categoria', new_categorium_path %>

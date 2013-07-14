@@ -1,13 +1,12 @@
 Etersol::Application.routes.draw do
-  resources :categoria
-
-
+  
   devise_for :users
   get "etersol/inicio"
   get "etersol/ubicacion"
   get "etersol/cotizar"
-  resources :productos
   get "marcas_afiliados/index"
+  resources :productos
+  resources :categoria
 
   #Crear url por medio POST y solo POST llamada enviar_mail asociada al controlador etersol#enviar_mail
   #match 'enviar_email' => 'etersol#enviar_email'

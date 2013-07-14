@@ -14,7 +14,7 @@ class CategoriaController < ApplicationController
   # GET /categoria/1.json
   def show
     @categorium = Categorium.find(params[:id])
-
+    @productos = Producto.all
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @categorium }
