@@ -46,6 +46,16 @@ module Etersol
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types
     # config.active_record.schema_format = :sql
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+    :address        =>     'smtp.gmail.com',
+    :port           =>      587,
+    :domain         =>      'localhost:3000',
+    :user_name      =>      'jaimedietericho.cr2@gmail.com',
+    :password       =>      'jaimeyjo27122008',
+    :authentication =>      'plain',
+    :enable_starttls_auto => true  
+    }
 
     # Enforce whitelist mode for mass assignment.
     # This will create an empty whitelist of attributes available for mass-assignment for all models

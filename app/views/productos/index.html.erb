@@ -1,22 +1,24 @@
 <% provide(:title,'Productos')%>  
  <div class="container-fluid">
       <div class="row">
-        <div class="span2">
+        <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header"> <a href="/productos"><h4>Productos</h4></a></li>
+              <li class="nav-header"> <h2>Etersol Curicó</h2> </li>
+              <img src="/assets/570.jpg">
+              <a href="/productos"><h2><b>Productos</b></h2></a></li>
               <li><a href="/categoria/1">alfombras</a></li>
               <li><a href="/categoria/2">pisos</a></li>
               <li><a href="/categoria/3">cielos</a></li>
               <li><a href="/categoria/4">Ceramicas</a></li>
               <li><a href="/categoria/5">Cortinas y toldos</a></li>
               <li><a href="/categoria/6">papeles murales</a></li>
-              <li><a href="#"></a></li>
+              
               
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
-        <div class="span10"> 
+        <div class="span9"> 
           <div class="container-fluid">                  
             
              <div class="row">
@@ -25,17 +27,19 @@
                   <% if @productos != nil %>                
                   <% @productos.each do |producto| %>
                     <% if producto.categoria_id == 1%>  
-                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="span2 textcenter"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
                     <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
                     <%if producto.imagen_file_name%>
                       <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
                     <%else%>
                       <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
                     <%end%>
-                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
-                    <div class="price">
-                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
-                    </div>
+                    <div>
+                    <a class="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %>    
+                      <div class="price">
+                         <div class="pricenew"><b>Precio: $<%= producto.precio%></b></div>
+                      </div></a> 
+                      </div>
                     </div>  
                     </div>
                   <% end %>
@@ -50,16 +54,18 @@
                   <% if @productos != nil %>                
                   <% @productos.each do |producto| %>
                     <% if producto.categoria_id == 2%>  
-                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="span2 textcenter"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
                     <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
                     <%if producto.imagen_file_name%>
                       <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
                     <%else%>
                       <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
                     <%end%>
-                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div>
+                    <a class="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %>   
                     <div class="price">
-                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                        <div class="pricenew"><b>Precio: $<%= producto.precio%></b></div>
+                     </div></a>                  
                     </div>
                     </div>  
                     </div>
@@ -75,16 +81,18 @@
                   <% if @productos != nil %>                
                   <% @productos.each do |producto| %>
                     <% if producto.categoria_id == 3%>  
-                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="span2 textcenter"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
                     <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
                     <%if producto.imagen_file_name%>
                       <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
                     <%else%>
                       <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
                     <%end%>
-                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div>
+                    <a class="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %>     
                     <div class="price">
-                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                        <div class="pricenew"><b>Precio: $<%= producto.precio%></b></div>               
+                    </div></a>
                     </div>
                     </div>  
                     </div>
@@ -99,16 +107,18 @@
                   <% if @productos != nil %>                
                   <% @productos.each do |producto| %>
                     <% if producto.categoria_id == 4%>  
-                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="span2 textcenter"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
                     <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
                     <%if producto.imagen_file_name%>
                       <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
                     <%else%>
                       <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
                     <%end%>
-                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div>
+                    <a class="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %>
                     <div class="price">
-                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                        <div class="pricenew"><b>Precio: $<%= producto.precio%></b></div>               
+                    </div></a>     
                     </div>
                     </div>  
                     </div>
@@ -124,16 +134,18 @@
                   <% if @productos != nil %>                
                   <% @productos.each do |producto| %>
                     <% if producto.categoria_id == 5%>  
-                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="span2 textcenter"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
                     <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
                     <%if producto.imagen_file_name%>
                       <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
                     <%else%>
                       <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
                     <%end%>
-                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                   <div>
+                    <a class="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %>    
                     <div class="price">
-                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                        <div class="pricenew"><b>Precio: $<%= producto.precio%></b></div>               
+                    </div></a> 
                     </div>
                     </div>  
                     </div>
@@ -149,16 +161,18 @@
                   <% if @productos != nil %>                
                   <% @productos.each do |producto| %>
                     <% if producto.categoria_id == 6%>  
-                    <div class="span3"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
+                    <div class="span2 textcenter"class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60 }'> 
                     <div class="item w2 h2 well"> <a href="/productos/<%=producto.id%>">
                     <%if producto.imagen_file_name%>
                       <img alt="" src="<%=producto.imagen.url(:thumb)%>" class="img-rounded"></a>
                     <%else%>
                       <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
                     <%end%>
-                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div>
+                    <a class="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %>    
                     <div class="price">
-                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
+                        <div class="pricenew"><b>Precio: $<%= producto.precio%></b></div>               
+                    </div></a> 
                     </div>
                     </div>  
                     </div>
@@ -181,13 +195,14 @@
                     <%else%>
                       <img alt="" src="/assets/300x222.gif"class="img-rounded"></a>
                     <%end%>
-                    <h5><b>Nombre del Producto</b></h5><aclass="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %></a>     
+                    <div>
+                    <a class="prdocutname" href="/productos/<%=producto.id%>"><%= producto.nombre %>    
                     <div class="price">
-                        <div class="pricenew">Precio: $<%= producto.precio%></div>               
-                    </div>
+                        <div class="pricenew"><b>Precio: $<%= producto.precio%></b></div>               
+                    </div></a> 
                     </div>  
                     </div>
-                  
+                    </div>
                   <% end %>
                   <% end %>
               </ul>

@@ -5,13 +5,15 @@ Etersol::Application.routes.draw do
   get "etersol/ubicacion"
   get "etersol/cotizar"
   get "marcas_afiliados/index"
+  post "etersol/enviar_email"
   resources :productos
   resources :categoria
+  #resources :users
 
   #Crear url por medio POST y solo POST llamada enviar_mail asociada al controlador etersol#enviar_mail
   #match 'enviar_email' => 'etersol#enviar_email'
 
-  resources :users
+  
 
 
   # The priority is based upon order of creation:

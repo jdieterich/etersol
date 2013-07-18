@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Etersol Curicó | <%= yield(:title) %></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+<title>Etersol Curicó | <%= yield(:title) %></title>
+<!--<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
  <%= stylesheet_link_tag    "application", :media => "all" %>
    <%= csrf_meta_tags %>
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -14,11 +13,12 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 <!-- fav -->
-<link rel="shortcut icon" href="assets/ico/favicon.html">
+<link rel="shortcut icon" href="../assets/productos/logop.ico">
 </head>
 <body>
 <!-- Header Start -->
 <header>
+<%if user_signed_in?%>
 <div class="headerstrip">
     <div class="container">
         <!-- Top Nav Start -->
@@ -26,13 +26,13 @@
             <div class="navbar" id="topnav">
                 <div class="navbar-inner">
                     <ul class="nav" >
-                        <%if user_signed_in?%>
-                        Bienvenido a Etersol Curicó
-                        <a class="orange" href="/users/sign_out"><%=   current_user.name%></a> 
-                        <%else%>
+                        <!-- <%if user_signed_in?%> -->
+                        Bienvenido a Etersol Curicó <a class="orange"><%=   current_user.name%></a>
+                        <p><a class="pull-right" href="/users/sign_out"> Salir</a><a class="pull-right" href="/users/edit"> Editar-</a></p>
+                        <!--   <%else%>
                         Bienvenido a Etersol   
                         <a class="orange" href="/users/sign_in">  ingresar</a> or <a class="orange" href="/users/sign_up">Crear una Cuenta</a> 
-                        <%end%>
+                        <%end%> -->
                     </ul>
                 </div>
             </div>
@@ -41,6 +41,7 @@
               
     </div>
 </div>
+<%end%>
 <div class="container">
     <div class="headerdetails"> <a class="logo pull-left" href="/"><img alt="" src="/assets/logogrande.png"></a>
         
@@ -52,13 +53,25 @@
         <ul class="nav-pills categorymenu container">
     
             <li><a href="/"><i class="icon-home icon-white font18"></i> <span> Nuestra Empresa</span></a></li>
-            <li><a href="/productos">Productos</a></li>
+            <li><a href="/productos">Productos</a>
+                <div>
+                    <ul>
+                        <li><a href="/categoria/1">Alfombras</a></li>
+                        <li><a href="/categoria/2">Pisos</a></li>
+                        <li><a href="/categoria/3">Cielos</a></li>
+                        <li><a href="/categoria/4">Cerámicas</a></li>
+                        <li><a href="/categoria/5">Cortinas y Toldos</a></li>
+                        <li><a href="/categoria/6">Papeles Murales</a></li>                  
+                    </ul>
+                </div>
+            </li>
             <li><a href="/etersol/ubicacion">Ubicación</a></li>
-            <li><a href="/etersol/cotizar">Cotice Aquí</a></li>
+            <li><a href="/etersol/cotizar">Cotizar Aquí</a></li>
             <%if user_signed_in?%>
                 <li><a href="/productos/new">Agregar Productos</a></li>
-                 <li><a href="/categoria">Editar Categorias</a></li>
+                <!--<li><a href="/categoria">Editar Categorias</a></li>-->
             <%end%>
+
         </ul>
     </nav>
 </div>

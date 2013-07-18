@@ -7,6 +7,9 @@ class EtersolController < ApplicationController
   end
 
   def enviar_email
-  	contenido = paramas[:email_cotizar]
+  	name = params[:name]
+    email = params[:email]
+    message = params[:message]
+  	MyMailer.cotizacion(name,email,message).deliver
   end
 end
